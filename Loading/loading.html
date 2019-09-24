@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dynamically Loaded Page Elements</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Dynamically Loaded Page Elements</h2>
+  <button type="button" id = "start" onclick="myFunction()"  class="btn red">START</button>
+
+<div id='load' style="display: none;">
+Loading... <img src='30.gif'>
+</div>
+
+
+<div id='hello' style="display: none;">
+    
+    <h3>Hello World!</h3>
+
+</div>
+   
+
+<script>
+   function myFunction() {
+
+     document.getElementById('start').style.display = "none";
+     document.getElementById('load').style.display = "block";
+
+     setTimeout(function() {
+        document.getElementById('load').style.display = "none";
+        document.getElementById('hello').style.display = "block";
+      } , 2000 );
+   
+  }
+
+</script>
+</body>
+</html>
+
+
+

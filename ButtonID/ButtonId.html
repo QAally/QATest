@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Challenging DOM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Challenging DOM</h2>
+  <button type="button" id = "red" onclick="myFunction()"  class="btn red" style="background-color: red;">red</button>
+
+  <label id = "lblred"></label>
+  </br>
+  </br>
+  </br>
+
+  <button type="button" id = "green" class="btn green" style="background-color: green;" >greeen</button>
+  <label id = "lblgreen"></label>
+  </br>
+  </br>
+  </br>
+
+  <button type="button" id = "blue" class="btn blue" style="background-color: blue;">blue</button>
+  <label id = "lblblue"></label>
+</div>
+   
+
+<script>
+   function myFunction() {
+
+   var r = Math.random();
+   var g = Math.random();
+   var b = Math.random();
+   
+    document.getElementsByClassName('green')[0].setAttribute('id', g);
+    document.getElementById("lblgreen").innerHTML = g;
+    document.getElementsByClassName('blue')[0].setAttribute('id', b);
+    document.getElementById("lblblue").innerHTML = b;
+    document.getElementsByClassName('red')[0].setAttribute('id', r) ;
+    document.getElementById("lblred").innerHTML = r;
+}  
+
+</script>
+</body>
+</html>

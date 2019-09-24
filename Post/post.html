@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+</head>
+<body>
+    <button type="button"  onclick="create_user();">Send</button>
+    <h4>Response</h4>
+    <div id="result"></div>
+    <script>
+        function create_user() {
+            var xhr = new XMLHttpRequest();
+            var url = "http://dummy.restapiexample.com/api/v1/create";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    if(json.error)  {
+                        document.getElementById("result").innerHTML = json.error;
+                    } else {
+                        document.getElementById("result").innerHTML = "New Emp created, ID is: " + json.id  + "     Emp Name   " + json.name + "    salary   " + json.salary + "    Age  " + json.age;
+                    }
+                }
+            };
+            var data = JSON.stringify({"name": "dps", "salary": "101010", "age": "22"});
+            xhr.send(data);
+        }
+        </script>
+</body>
+</html>
